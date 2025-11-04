@@ -97,9 +97,18 @@
   </body>
 
   <script>
-    function onToggleMenu() {
-        console.log("TRIGGER");
-        nav.classList.toggle("open");
+    // Obtiene los elementos de los botones y campo de resultado del documento
+    document.addEventListener("DOMContentLoaded", () => {
+    const display = document.querySelector(".result");
+    const buttons = Array.from(document.querySelectorAll(".device button"));    
+
+    // Cuando un botón recibe un click, se activa la función
+    buttons.forEach(btn => btn.addEventListener("click", () => updateNumber(btn.textContent.trim())));
+
+    function updateNumber(currentNumber) {
+      display.value += currentNumber;
     }
+
+  });
   </script>
 </html>
