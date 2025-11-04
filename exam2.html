@@ -1,0 +1,105 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+  </head>
+
+  <style>
+    body {
+      display: flex;
+      background-color: rgb(247, 114, 90);
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    .device {
+      background-color: antiquewhite;
+      width: 50vw;
+      height: 60vh;
+      max-width: 450px;
+      max-height: 600px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 20px 20px;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      box-shadow: 0 6px 20px rgba(0,0,0,.40);
+      border-radius: 8px;
+      gap: 5%;
+    }
+
+    .result {
+      grid-column: 1 / -1;
+      background-color: aliceblue;
+      width: 100%;
+      height: 100%;
+      border: 1px solid;
+      border-radius: 4px;
+      padding: 8px;
+    }
+
+    button {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,.10);
+      padding: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .number-button {
+      background-color: white;
+    }
+
+    .number-button:hover {
+      background-color: rgb(107, 107, 107);
+    }
+
+    .operation-button {
+      background-color: grey;
+      color:white;
+    }
+
+    .operation-button:hover {
+      background-color: rgb(63, 63, 63);
+    }
+  </style>
+
+  <body>
+    <div class="device">
+      <input class="result" type="text" readonly value="0"></input>
+      <button class="operation-button" onclick="addNumber()">C</button>
+      <button class="operation-button">CE</button>
+      <button class="operation-button">/</button>
+      <button class="operation-button">*</button>
+      <button class="number-button">7</button>
+      <button class="number-button">8</button>
+      <button class="number-button">9</button>
+      <button class="operation-button">-</button>
+      <button class="number-button">4</button>
+      <button class="number-button">5</button>
+      <button class="number-button">6</button>
+      <button class="operation-button">+</button>
+      <button class="number-button">1</button>
+      <button class="number-button">2</button>
+      <button class="number-button">3</button>
+      <button class="operation-button" style="grid-row: span 2;">=</button>
+      <button class="number-button" style="grid-column: span 2;">0</button>
+      <button class="number-button">.</button>
+    </div>
+  </body>
+
+  <script>
+    function onToggleMenu() {
+        console.log("TRIGGER");
+        nav.classList.toggle("open");
+    }
+  </script>
+</html>
